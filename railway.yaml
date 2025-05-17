@@ -4,11 +4,11 @@
 services:
   # API Server configuration
   server:
-    # Path to the server directory
-    path: lazyloadingtesting/server
-    # Use Dockerfile for deployment
+    # Use root Dockerfile for deployment
     dockerfile_path: Dockerfile
     # Environment variables
     env:
       - name: ASPNETCORE_ENVIRONMENT
         value: Production
+      - name: PORT
+        value: 8080
