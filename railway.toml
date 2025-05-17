@@ -1,0 +1,18 @@
+﻿# Root railway.toml - Points to server directory
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "cd lazyloadingtesting/server && chmod +x find_dll.sh && ./find_dll.sh && chmod +x start.sh && ./start.sh"
+restartPolicyType = "ON_FAILURE"
+healthcheckPath = "/health"
+
+# Environment configuration
+[deploy.env]
+ASPNETCORE_ENVIRONMENT = "Production"
+PORT = "8080"
+ASPNETCORE_URLS = "http://+:8080"
+
+# Specify .NET 8.0 SDK
+[nixpacks]
+pkgs = ["dotnet-sdk_8"]

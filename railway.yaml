@@ -1,0 +1,14 @@
+# Railway project configuration (root level)
+# This file helps Railway identify the project structure
+
+services:
+  # API Server configuration
+  server:
+    # Use root Dockerfile for deployment
+    dockerfile_path: Dockerfile
+    # Environment variables
+    env:
+      - name: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - name: PORT
+        value: 8080
