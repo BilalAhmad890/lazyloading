@@ -1,1 +1,1 @@
-web: cd lazyloadingtesting/server/out && dotnet Server.dll
+web: dotnet lazyloadingtesting/server/out/Server.dll

@@ -5,7 +5,7 @@ buildCommand = "dotnet publish Server.csproj -c Release -o out"
 nixpacksConfigPath = "nixpacks.toml"
 
 [deploy]
-startCommand = "dotnet out/Server.dll"
+startCommand = "chmod +x start.sh && ./start.sh"
 restartPolicyType = "ON_FAILURE"
 healthcheckPath = "/health"
 

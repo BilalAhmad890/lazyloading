@@ -5,4 +5,4 @@ nixPkgs = ['dotnet-sdk_8']
 cmds = ['dotnet restore', 'dotnet publish -c Release -o out']
 
 [start]
-cmd = 'dotnet out/Server.dll'
+cmd = 'dotnet ./out/Server.dll'

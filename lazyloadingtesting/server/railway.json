@@ -6,7 +6,7 @@
   },
   "deploy": {
     "numReplicas": 1,
-    "startCommand": "dotnet out/Server.dll",
+    "startCommand": "dotnet ./out/Server.dll",
     "restartPolicyType": "ON_FAILURE",
     "healthcheckPath": "/health"
   }
