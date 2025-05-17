@@ -1,0 +1,24 @@
+# .dockerignore
+
+# Exclude common directories
+.git
+.github
+.vs
+.vscode
+bin/
+obj/
+out/
+TestResults/
+
+# Exclude any local development files
+*.user
+*.userosscache
+*.suo
+*.DS_Store
+Thumbs.db
+*.dbmdl
+*.jfm
+
+# Exclude docker files themselves to avoid recursive copying
+Dockerfile
+.dockerignore
