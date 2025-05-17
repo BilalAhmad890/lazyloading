@@ -5,9 +5,10 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app/server
 
 # Copy the .csproj file first and restore dependencies
-# Use uppercase here to match actual file name
-COPY lazyloadingtesting/server/Server.csproj .
-RUN dotnet restore
+# Use uppercase here to match actual file name and be explicit about the path
+COPY lazyloadingtesting/server/Server.csproj ./Server.csproj
+RUN ls -la
+RUN dotnet restore ./Server.csproj
 
 # Copy the rest of the application files
 COPY lazyloadingtesting/server/ .

@@ -1,0 +1,15 @@
+# Exclude build outputs
+bin/
+obj/
+
+# Exclude any development files
+.vs/
+.vscode/
+*.user
+
+# Exclude Git-related files
+.git/
+.gitattributes
+
+# Keep SQLite database file
+!shopdb.sqlite
