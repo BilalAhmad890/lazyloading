@@ -1,7 +1,7 @@
 # Railway project configuration for .NET 8
 [build]
 builder = "nixpacks"
-buildCommand = "dotnet publish Server.csproj -c Release -o out"
+buildCommand = "dotnet publish Server.csproj -c Release -o ./out"
 nixpacksConfigPath = "nixpacks.toml"
 
 [deploy]

@@ -17,7 +17,12 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 
 # Copy the published output from the build stage
-COPY --from=build /app/out/ .
+COPY --from=build /app/out/ ./out/
+COPY --from=build /app/start.sh ./
+COPY --from=build /app/find_dll.sh ./
+
+# Make scripts executable
+RUN chmod +x ./start.sh && chmod +x ./find_dll.sh
 
 # Expose the port the app runs on. Railway will map this.
 # The PORT environment variable is automatically set by Railway.
@@ -28,4 +33,5 @@ ENV ASPNETCORE_URLS=http://+:${PORT}
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
   CMD curl -f "http://localhost:8080/health" || exit 1
 
-ENTRYPOINT ["dotnet", "Server.dll"]
+# Use the start script to find and execute the DLL
+CMD ["./start.sh"]
