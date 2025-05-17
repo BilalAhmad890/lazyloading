@@ -7,6 +7,20 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+## Environment Setup
+
+This project uses environment variables to handle different API URLs between development and production:
+
+1. For development:
+   - Copy `.env.example` to `.env.development`
+   - Set `VITE_API_URL=http://localhost:5000` (or your local API URL)
+
+2. For production:
+   - Copy `.env.example` to `.env.production`
+   - Set `VITE_API_URL=https://web-production-b2db.up.railway.app` (or your production API URL)
+
+The application will automatically use the correct environment variables based on the build mode.
+
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
