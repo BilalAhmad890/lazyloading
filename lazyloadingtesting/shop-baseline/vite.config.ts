@@ -7,6 +7,8 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: "./", // Ensures built assets are referenced correctly
 
+  
+
   server: {
     // In development, proxy API requests to localhost
     proxy: {
