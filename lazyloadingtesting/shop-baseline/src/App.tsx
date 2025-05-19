@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Layout from './components/layout/Layout';
 import ProductsList from './pages/ProductsList';
 import ProductDetails from './pages/ProductDetails';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        <SpeedInsights/>
       </Layout>
     </Router>
   );
